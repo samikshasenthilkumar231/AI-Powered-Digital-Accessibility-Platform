@@ -1,0 +1,32 @@
+{
+  "labels": [
+    "hello",
+    "yes",
+    "no",
+    "thank_you",
+    "wait",
+    "repeat",
+    "help",
+    "goodbye"
+  ],
+  "frames_per_sequence": 30,
+  "target_valid_sequences_per_label": 20,
+  "maximum_missing_hand_frames": 5,
+  "feature_format": {
+    "per_frame": "fixed left/right hand slots",
+    "per_hand": "present mask, handedness, and 21 normalized [x, y, z] landmarks",
+    "missing_hand_representation": "present=false and all 21 landmarks padded with [0.0, 0.0, 0.0]",
+    "raw_camera_images_saved": false
+  },
+  "collection_date": "2026-08-28T17:25:45.316183+00:00",
+  "samples_per_label": {
+    "hello": 128,
+    "yes": 89,
+    "no": 69,
+    "thank_you": 104,
+    "wait": 61,
+    "repeat": 62,
+    "help": 61,
+    "goodbye": 61
+  }
+}

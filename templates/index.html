@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Powered Digital Accessibility Platform for Hearing-Impaired People</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="ambient ambient-three" aria-hidden="true"></div>
+
+    <main class="meeting-app">
+      <header class="app-header">
+        <div class="brand-row">
+          <div class="brand-mark" aria-hidden="true">AI</div>
+          <div>
+            <p class="eyebrow">ACCESSIBLE CONVERSATIONS</p>
+            <div class="title-row">
+              <h1>AI-Powered Digital Accessibility Platform for Hearing-Impaired People</h1>
+              <span class="live-pill"><span class="live-dot"></span>Live access</span>
+            </div>
+          </div>
+        </div>
+        <p class="subtitle">Two-Way Communication Assistant</p>
+      </header>
+
+      <section class="panel hero-panel" aria-label="Platform overview">
+        <div class="hero-copy">
+          <p class="eyebrow">REAL-TIME COMMUNICATION</p>
+          <h2>Speak. Sign. Understand.</h2>
+          <p class="hero-text">
+            Intelligent live transcription and gesture recognition designed for accessible, inclusive collaboration.
+          </p>
+          <div class="signal-grid" aria-label="Communication flows">
+            <div class="signal-card">
+              <span class="signal-label">Speech</span>
+              <span class="signal-arrow">→</span>
+              <span class="signal-label">AI</span>
+              <span class="signal-arrow">→</span>
+              <span class="signal-label">Sign/Text</span>
+            </div>
+            <div class="signal-card">
+              <span class="signal-label">Sign</span>
+              <span class="signal-arrow">→</span>
+              <span class="signal-label">AI</span>
+              <span class="signal-arrow">→</span>
+              <span class="signal-label">Text/Speech</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="network-ring ring-one"></div>
+          <div class="network-ring ring-two"></div>
+          <div class="signal-node node-a"></div>
+          <div class="signal-node node-b"></div>
+          <div class="signal-node node-c"></div>
+          <div class="signal-node node-d"></div>
+          <div class="signal-node node-e"></div>
+        </div>
+      </section>
+
+      <section class="panel caption-panel" aria-labelledby="speech-heading">
+        <div class="panel-heading">
+          <p class="section-label">LIVE SPEECH CAPTION</p>
+          <span class="live-badge">LIVE</span>
+        </div>
+        <h2 id="speech-heading" class="sr-only">Live speech caption</h2>
+
+        <div class="transcription-shell">
+          <div class="waveform" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p id="speech-caption" class="caption-placeholder" aria-live="polite">Waiting for speaker...</p>
+        </div>
+
+        <div class="speech-controls">
+          <p id="listening-status" class="status" role="status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Not listening
+          </p>
+          <div class="control-buttons">
+            <button id="start-listening" class="button button-primary" type="button">🎤 Start Listening</button>
+            <button id="stop-listening" class="button button-secondary" type="button" disabled>⏹ Stop Listening</button>
+          </div>
+        </div>
+        <p id="listening-help" class="listening-help">Click Start Listening, then choose Allow when your browser asks to use the microphone.</p>
+      </section>
+
+      <section class="panel camera-panel" aria-labelledby="camera-heading">
+        <div class="panel-heading">
+          <div>
+            <p class="section-label">WEBCAM</p>
+            <h2 id="camera-heading">Your camera feed</h2>
+          </div>
+          <p id="camera-status" class="status" role="status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Camera not connected
+          </p>
+        </div>
+
+        <div class="video-frame" aria-label="Camera preview panel">
+          <div class="camera-overlay" aria-hidden="true"></div>
+          <div class="vision-badge" aria-hidden="true">AI VISION</div>
+          <video id="webcam" autoplay playsinline muted aria-label="Live webcam preview"></video>
+          <p id="video-placeholder" class="video-placeholder">Your camera preview will appear here</p>
+        </div>
+
+        <div class="camera-controls">
+          <button id="start-camera" class="button button-primary" type="button">Start Camera</button>
+          <button id="stop-camera" class="button button-secondary" type="button" disabled>Stop Camera</button>
+        </div>
+      </section>
+
+      <section class="panel caption-panel" aria-labelledby="sign-heading">
+        <div class="panel-heading">
+          <div>
+            <p class="section-label">SIGN LANGUAGE OUTPUT</p>
+            <h2 id="sign-heading">Detected gesture</h2>
+          </div>
+          <p id="sign-status" class="status" role="status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Recognition ready
+          </p>
+        </div>
+
+        <div class="sign-display-shell">
+          <div class="gesture-orbit" aria-hidden="true"></div>
+          <div class="gesture-core" aria-hidden="true"></div>
+          <p id="sign-output" class="caption-placeholder sign-output" aria-live="polite">Waiting for sign...</p>
+        </div>
+
+        <p id="recognition-help" class="listening-help">📷 Start your camera to detect signs</p>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
