@@ -1,6 +1,7 @@
 import base64
 import binascii
 import json
+import os
 from pathlib import Path
 
 import logging
@@ -185,4 +186,4 @@ def recognize_gesture():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
